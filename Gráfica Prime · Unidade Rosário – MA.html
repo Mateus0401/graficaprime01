@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gráfica Prime · Unidade Rosário – MA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600&family=Kaushan+Script&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#141416;--graphite:#232628;--line:#33373a;--paper:#f3f1ee;--mute:#a7abae;--orange:#f28c28;--teal:#2ba3b8;color-scheme:dark;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--ink);color:var(--paper);font:400 17px/1.6 Barlow,system-ui,sans-serif}
+h1,h2,h3{font-family:Anton,Impact,"Arial Narrow",sans-serif;font-weight:400;line-height:1;margin:0;text-transform:uppercase;letter-spacing:.01em}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:rgba(20,20,22,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{display:flex;align-items:center;gap:10px;font:400 20px Anton,sans-serif;text-decoration:none;letter-spacing:.03em}
+.brand svg{width:26px;height:auto}
+nav a{margin-left:20px;text-decoration:none;color:var(--mute);font-weight:500;font-size:15px}
+nav a:hover{color:var(--paper)}
+.btn{display:inline-block;background:var(--orange);color:#1a1209;font-weight:600;padding:14px 26px;border-radius:4px;text-decoration:none;border:0;font:600 17px Barlow,sans-serif;cursor:pointer}
+.btn:hover{background:#ffa045}
+.btn.ghost{background:none;color:var(--paper);border:2px solid var(--line)}
+.btn.ghost:hover{border-color:var(--teal)}
+/* hero */
+.hero{padding:56px 0 72px;background:radial-gradient(900px 420px at 0% 0%,rgba(242,140,40,.28),transparent 60%),radial-gradient(800px 480px at 100% 100%,rgba(120,30,45,.4),transparent 60%)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(56px,9vw,120px)}
+.hero h1 span{display:block}
+.script{font:400 clamp(44px,7vw,84px)/1 "Kaushan Script",cursive;color:var(--orange);margin:6px 0 0 4px;display:block}
+.hero p{max-width:30em;color:#d6d4d1;font-size:19px;margin:22px 0 30px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.logo-card{justify-self:center;width:min(100%,340px);aspect-ratio:1/1.05;display:grid;place-items:center;align-content:center;gap:18px;background:var(--graphite);border:3px solid transparent;border-radius:14px;
+background:linear-gradient(var(--graphite),var(--graphite)) padding-box,linear-gradient(135deg,var(--teal),var(--orange)) border-box}
+.logo-card svg{width:46%;height:auto}
+.logo-card b{font:600 22px Barlow;letter-spacing:.06em;color:var(--mute);text-transform:uppercase}
+@media (prefers-reduced-motion:no-preference){.logo-card{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}.hero h1,.script{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}.script{animation-delay:.15s}}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+/* sections */
+section{padding:76px 0}
+h2{font-size:clamp(38px,5.5vw,60px);margin-bottom:12px}
+.lead{color:var(--mute);max-width:36em;margin:0 0 40px}
+.svc{display:grid;grid-template-columns:repeat(2,1fr);gap:0 48px}
+.svc li{list-style:none;padding:20px 0 20px 18px;border-left:3px solid var(--line);border-bottom:0;margin-bottom:6px;transition:border-color .2s}
+.svc li:hover{border-left-color:var(--orange)}
+.svc h3{font-size:25px;margin-bottom:4px}
+.svc p{margin:0;color:var(--mute);font-size:16px}
+.band{background:var(--graphite);border-block:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;counter-reset:s;padding:0;margin:0}
+.steps li{list-style:none;counter-increment:s;border-top:3px solid var(--teal);padding-top:16px}
+.steps li::before{content:counter(s);font:400 34px Anton;color:var(--teal);display:block;margin-bottom:6px}
+.steps h3{font-size:22px;margin-bottom:6px}
+.steps p{margin:0;color:var(--mute);font-size:16px}
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+.why h3{font-size:26px;color:var(--orange);margin-bottom:8px}
+.why p{margin:0;color:#d6d4d1}
+/* quote form */
+.quote{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+form{display:grid;gap:14px}
+label{font-weight:500;font-size:15px;color:var(--mute);display:grid;gap:6px}
+input,select,textarea{font:inherit;color:var(--paper);background:var(--ink);border:2px solid var(--line);border-radius:4px;padding:12px 14px;width:100%}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--teal)}
+textarea{min-height:100px;resize:vertical}
+.note{font-size:14px;color:var(--mute);margin:0}
+footer{padding:44px 0 56px;border-top:1px solid var(--line);color:var(--mute);font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:6;box-shadow:0 8px 24px rgba(0,0,0,.5)}
+@media (max-width:820px){
+.hero .wrap,.quote{grid-template-columns:1fr}.svc,.why{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}
+nav a:not(.keep){display:none}.hero{padding-top:36px}section{padding:56px 0}.logo-card{order:-1;width:220px}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="p" viewBox="0 0 200 230"><g fill="#f3f1ee">
+<rect x="0" y="0" width="62" height="62"/><rect x="68" y="0" width="62" height="62" opacity=".92"/><polygon points="136,0 200,56 136,62"/>
+<rect x="0" y="68" width="62" height="62" opacity=".94"/><polygon points="136,68 200,68 200,118 136,130"/><polygon points="136,136 200,124 136,190" opacity=".85"/>
+<rect x="0" y="136" width="62" height="62" opacity=".9"/><rect x="68" y="136" width="62" height="54" opacity=".96"/><polygon points="0,204 62,204 62,230" opacity=".95"/>
+</g></symbol></defs></svg>
+
+<header><div class="wrap">
+<a class="brand" href="#topo"><svg viewBox="0 0 200 230" role="img" aria-label="Logo Gráfica Prime"><use href="#p"/></svg>Gráfica Prime</a>
+<nav><a href="#servicos">Serviços</a><a href="#processo">Como funciona</a><a class="keep" href="#orcamento">Pedir orçamento</a></nav>
+</div></header>
+
+<main id="topo">
+<div class="hero"><div class="wrap">
+<div>
+<h1><span>Chegamos</span><span>em</span></h1>
+<span class="script">Rosário</span>
+<p>Mais um capítulo está prestes a começar, e a sua marca é parte essencial dele. Impressos e comunicação visual com acabamento cuidadoso, agora com duas unidades: São Luís e Rosário.</p>
+<div class="cta"><a class="btn" href="#orcamento">Pedir orçamento</a><a class="btn ghost" href="#servicos">Ver o que imprimimos</a></div>
+</div>
+<div class="logo-card"><svg viewBox="0 0 200 230" role="img" aria-label="Logo Gráfica Prime"><use href="#p"/></svg><b>Gráfica Prime</b></div>
+</div></div>
+
+<section id="servicos"><div class="wrap">
+<h2>O que a sua empresa precisa imprimir</h2>
+<p class="lead">Do cartão que você entrega na mão à faixa que chama o cliente na rua.</p>
+<ul class="svc" style="padding:0;margin:0">
+<li><h3>Cartões de visita</h3><p>Papéis e acabamentos que passam a imagem certa do seu negócio.</p></li>
+<li><h3>Panfletos e folders</h3><p>Divulgação para lançamentos, promoções e eventos.</p></li>
+<li><h3>Banners e faixas</h3><p>Lona e comunicação visual para fachada, loja e evento.</p></li>
+<li><h3>Adesivos e etiquetas</h3><p>Rótulos, selos e embalagens com a identidade da sua marca.</p></li>
+<li><h3>Blocos e papelaria</h3><p>Receituários, comandas, notas e cadernos personalizados.</p></li>
+<li><h3>Brindes e camisetas</h3><p>Uniformes e presentes personalizados para equipe e clientes.</p></li>
+</ul>
+</div></section>
+
+<section id="processo" class="band"><div class="wrap">
+<h2>Do pedido à entrega</h2>
+<p class="lead">Quatro passos, sem complicação.</p>
+<ol class="steps">
+<li><h3>Você pede</h3><p>Conta o que precisa, em quantidade e prazo, pelo WhatsApp ou pelo formulário.</p></li>
+<li><h3>Recebe o orçamento</h3><p>Valor e prazo claros antes de qualquer compromisso.</p></li>
+<li><h3>Aprova a arte</h3><p>Você confere o layout e só seguimos com a sua aprovação.</p></li>
+<li><h3>Retira ou recebe</h3><p>Impresso pronto, conferido e entregue no combinado.</p></li>
+</ol>
+</div></section>
+
+<section><div class="wrap">
+<h2>Por que fechar com a Prime</h2>
+<p class="lead">Uma gráfica nova na cidade, com a seriedade de quem quer ficar.</p>
+<div class="why">
+<div><h3>Acabamento cuidadoso</h3><p>Cada trabalho é conferido antes de sair, para chegar do jeito que você aprovou.</p></div>
+<div><h3>Atendimento próximo</h3><p>Duas unidades, em São Luís e em Rosário: você fala com gente da sua região, sem complicação.</p></div>
+<div><h3>Prazo combinado</h3><p>A data é definida no orçamento, e você acompanha o pedido até a entrega.</p></div>
+</div>
+</div></section>
+
+<section id="orcamento" class="band"><div class="wrap quote">
+<div>
+<h2>Peça seu orçamento</h2>
+<p class="lead">Preencha em um minuto. Ao enviar, abrimos o WhatsApp com o seu pedido já escrito, e a gente responde por lá.</p>
+<p class="note">Unidades em São Luís e Rosário – MA</p>
+</div>
+<form id="f">
+<label>Seu nome<input name="nome" required autocomplete="name"></label>
+<label>O que você precisa?
+<select name="item"><option>Cartões de visita</option><option>Panfletos e folders</option><option>Banners e faixas</option><option>Adesivos e etiquetas</option><option>Blocos e papelaria</option><option>Brindes e camisetas</option><option>Outro</option></select></label>
+<label>Quantidade e detalhes<textarea name="det" placeholder="Ex.: 1.000 cartões, frente e verso, para quinta-feira"></textarea></label>
+<label>Unidade mais perto de você
+<select name="un"><option>São Luís</option><option>Rosário</option></select></label>
+<button class="btn" type="submit">Enviar pelo WhatsApp</button>
+</form>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>Gráfica Prime · São Luís e Rosário – MA</span><span>© 2026 Gráfica Prime</span></div></footer>
+<a class="btn fab" id="wa" href="#orcamento">Falar no WhatsApp</a>
+
+<script>
+var NUMERO="5598999628165";
+var base="https://wa.me/"+NUMERO;
+document.getElementById("wa").href=base+"?text="+encodeURIComponent("Olá! Vim pelo site da Gráfica Prime e quero um orçamento.");
+document.getElementById("f").addEventListener("submit",function(e){
+e.preventDefault();var d=new FormData(e.target);
+var t="Olá! Sou "+d.get("nome")+" e quero um orçamento de: "+d.get("item")+" (unidade "+d.get("un")+")."+(d.get("det")?" Detalhes: "+d.get("det"):"");
+window.open(base+"?text="+encodeURIComponent(t),"_blank","noopener");
+});
+</script>
+</body>
+</html>
